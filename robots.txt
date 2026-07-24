@@ -4,4 +4,4 @@ Disallow: /mentions-legales.html
 Disallow: /confidentialite.html
 Disallow: /cookies.html
 
-Sitemap: https://lepetitbaigneur-site.vercel.app/sitemap.xml
+Sitemap: https://le-petit-baigneur.vercel.app/sitemap.xml
