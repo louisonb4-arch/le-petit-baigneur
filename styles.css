@@ -1,0 +1,644 @@
+/* ===================================================
+   LE PETIT BAIGNEUR — « Le carnet de bord »
+   Mobile d'abord (375/390), desktop en extension.
+   =================================================== */
+
+:root {
+  --papier: #F6EEDC;
+  --papier-clair: #FBF6E9;
+  --blanc: #FFFDF6;
+  --encre: #1D3A33;
+  --encre-douce: #45625A;
+  --rouge: #D8432C;
+  --corail: #E4535F;
+  --raphia: #B98A4F;
+  --trait: rgba(29, 58, 51, 0.22);
+  --f-display: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+  --f-mono: "Sometype Mono", "Courier New", monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--f-display);
+  font-weight: 400;
+  background: var(--papier);
+  color: var(--encre);
+  line-height: 1.55;
+  font-size: 1rem;
+  overflow-x: clip;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+.mono {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- fils d'eau (séparateurs) ---------- */
+
+section { position: relative; padding: 4.5rem 1.35rem 4rem; }
+
+section + section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 1.35rem; right: 1.35rem;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--trait) 0 10px, transparent 10px 16px);
+}
+
+/* =================== ENTRÉE =================== */
+
+.entree {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--papier);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  transition: opacity 0.55s ease, visibility 0.55s;
+}
+
+.entree.finie { opacity: 0; visibility: hidden; }
+
+.entree-inner { text-align: center; }
+
+.entree-svg { width: min(72vw, 340px); height: auto; }
+
+.entree-svg path {
+  stroke: var(--encre);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.entree-svg .e-eau { stroke-width: 2.6; }
+.entree-svg .e-trait.t7 { stroke-dasharray: 0.06 0.04; }
+
+.entree.animee .e-eau { animation: e-draw 0.7s ease-out forwards; }
+.entree.animee .t1 { animation: e-draw 0.45s ease-out 0.5s forwards; }
+.entree.animee .t2 { animation: e-draw 0.4s ease-out 0.7s forwards; }
+.entree.animee .t3 { animation: e-draw 0.3s ease-out 0.85s forwards; }
+.entree.animee .t4 { animation: e-draw 0.3s ease-out 0.95s forwards; }
+.entree.animee .t5 { animation: e-draw 0.35s ease-out 1.05s forwards; }
+.entree.animee .t6 { animation: e-draw 0.4s ease-out 1.15s forwards; }
+.entree.animee .t7 { animation: e-draw 0.5s ease-out 1.3s forwards; }
+
+@keyframes e-draw { to { stroke-dashoffset: 0; } }
+
+.entree-nom {
+  margin-top: 1.1rem;
+  font-weight: 750;
+  font-size: 1.7rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.entree-nom span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.55em);
+}
+
+.entree.animee .entree-nom span { animation: e-monte 0.55s cubic-bezier(0.2, 0.6, 0.2, 1) forwards; }
+.entree.animee .entree-nom span:nth-child(1) { animation-delay: 0.9s; }
+.entree.animee .entree-nom span:nth-child(2) { animation-delay: 1.02s; }
+.entree.animee .entree-nom span:nth-child(3) { animation-delay: 1.14s; }
+
+@keyframes e-monte { to { opacity: 1; transform: translateY(0); } }
+
+.entree-lieu {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+  margin-top: 0.6rem;
+  opacity: 0;
+}
+
+.entree.animee .entree-lieu { animation: e-monte 0.5s ease 1.35s forwards; }
+
+/* version raccourcie (visite suivante) */
+.entree.rapide .e-eau,
+.entree.rapide .e-trait { animation-duration: 0.25s !important; animation-delay: 0s !important; }
+.entree.rapide .entree-nom span,
+.entree.rapide .entree-lieu { animation-duration: 0.3s !important; animation-delay: 0.1s !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .entree-svg path { stroke-dashoffset: 0; stroke-dasharray: none; }
+  .entree.animee .e-eau, .entree.animee .e-trait { animation: none; }
+  .entree .entree-nom span, .entree .entree-lieu { animation: none !important; opacity: 1; transform: none; }
+  .entree { transition: opacity 0.3s ease, visibility 0.3s; }
+}
+
+/* =================== TOPBAR =================== */
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.topbar-nom {
+  font-weight: 750;
+  font-size: 1.02rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar-nav { display: none; }
+
+.topbar-tel {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--trait);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+
+/* =================== HERO =================== */
+
+.hero { padding-top: 2.6rem; }
+
+.hero-coord { color: var(--encre-douce); margin-bottom: 1.4rem; }
+
+.hero-titre {
+  font-size: clamp(2.55rem, 12vw, 3.4rem);
+  font-weight: 780;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.ht-ligne { display: block; }
+.ht-ligne:nth-child(2) { padding-left: 0.9em; }
+.ht-rouge { color: var(--rouge); font-style: normal; }
+
+.hero-note {
+  max-width: 21rem;
+  margin-top: 1.1rem;
+  color: var(--encre-douce);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.hero-dessin { margin: 2.2rem -0.4rem 0; }
+
+.hero-dessin svg { width: 100%; height: auto; }
+
+.hero-dessin path {
+  stroke: var(--encre);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-dessin .d-eau { stroke-width: 2.8; }
+.hero-dessin .d-fin { stroke-width: 1.4; opacity: 0.55; }
+.hero-dessin .d-reflet { stroke-width: 1.4; opacity: 0.25; stroke-dasharray: 7 9; }
+.hero-dessin .d-rouge { stroke: var(--rouge); }
+.hero-dessin .d-vert { stroke: var(--encre-douce); stroke-width: 1.8; }
+.hero-dessin .d-frange { stroke-width: 1.3; opacity: 0.7; }
+.hero-dessin .d-fanions { stroke-width: 1.4; }
+.hero-dessin .d-fanion { stroke-width: 1.3; fill: var(--rouge); stroke: var(--rouge); }
+.hero-dessin .d-corde { stroke-dasharray: 2 7; stroke-width: 2.2; }
+.hero-dessin .d-canard { stroke: var(--raphia); stroke-width: 2; }
+
+.hero-legende {
+  margin-top: 0.5rem;
+  color: var(--encre-douce);
+  font-size: 0.62rem;
+  text-align: right;
+  padding-right: 0.4rem;
+}
+
+.hero-rdv {
+  margin-top: 2.4rem;
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  padding: 1.4rem 1.3rem 1.5rem;
+  box-shadow: 4px 5px 0 rgba(29, 58, 51, 0.08);
+}
+
+.rdv-label { color: var(--rouge); margin-bottom: 0.55rem; }
+
+.rdv-titre {
+  font-weight: 750;
+  font-size: 1.55rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.rdv-detail { margin-top: 0.5rem; font-size: 0.92rem; color: var(--encre-douce); }
+
+.rdv-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.2rem; }
+
+.btn {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.78rem 1.15rem;
+  border: 1.5px solid var(--encre);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-plein { background: var(--rouge); border-color: var(--rouge); color: var(--papier-clair); }
+.btn-ligne { background: transparent; }
+
+.btn:active { transform: translateY(2px); }
+
+@media (hover: hover) {
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 rgba(29, 58, 51, 0.25); }
+}
+
+/* =================== SECTIONS COMMUNES =================== */
+
+.sec-tete { margin-bottom: 2.2rem; }
+
+.sec-num { color: var(--rouge); margin-bottom: 0.7rem; }
+
+.sec-tete h2 {
+  font-size: clamp(2rem, 9vw, 2.6rem);
+  font-weight: 760;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+/* révélations au scroll */
+.rev { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1); }
+.rev.vu { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rev { opacity: 1; transform: none; transition: none; }
+}
+
+/* =================== SNAPSHOTS =================== */
+
+.snap {
+  background: var(--blanc);
+  border: 1px solid rgba(29, 58, 51, 0.14);
+  padding: 0.5rem 0.5rem 0.55rem;
+  box-shadow: 0 6px 14px rgba(29, 58, 51, 0.10);
+  width: fit-content;
+}
+
+.snap img { width: 100%; }
+
+.snap figcaption {
+  padding-top: 0.45rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--encre-douce);
+  text-transform: lowercase;
+}
+
+.snap-a { transform: rotate(-1.6deg); }
+.snap-b { transform: rotate(1.3deg); }
+
+/* =================== LE LIEU =================== */
+
+.pont { margin-bottom: 3.2rem; }
+
+.pont-tag {
+  display: inline-block;
+  color: var(--papier-clair);
+  background: var(--encre);
+  padding: 0.32rem 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.pont h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+  max-width: 18ch;
+}
+
+.pont > p { max-width: 34rem; color: var(--encre-douce); }
+
+.pont-photos {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.pont-photos .snap:first-child { flex: 1.55; }
+.pont-photos .snap:last-child { flex: 1; margin-top: 1.6rem; }
+
+.lieu-histoire {
+  border-left: 3px solid var(--rouge);
+  padding: 0.3rem 0 0.3rem 1.1rem;
+  max-width: 36rem;
+}
+
+.lieu-histoire .sec-num { color: var(--rouge); margin-bottom: 0.6rem; }
+.lieu-histoire p:last-child { font-size: 0.95rem; }
+
+/* =================== AGENDA =================== */
+
+.agenda { background: var(--encre); color: var(--papier-clair); }
+
+.agenda .sec-num { color: var(--corail); }
+.agenda .sec-tete h2 { color: var(--papier-clair); }
+
+.rituels { list-style: none; }
+
+.rituel {
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  gap: 1rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid rgba(246, 238, 220, 0.18);
+}
+
+.rituel:last-child { border-bottom: 1px solid rgba(246, 238, 220, 0.18); }
+
+.rituel-jour { color: var(--corail); padding-top: 0.25rem; }
+
+.rituel h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+
+.rituel p:not(.rituel-jour) { margin-top: 0.35rem; font-size: 0.92rem; color: rgba(246, 238, 220, 0.75); }
+
+.agenda-note {
+  margin-top: 2rem;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  font-size: 0.78rem;
+  color: rgba(246, 238, 220, 0.75);
+}
+
+.agenda-note a { color: var(--papier-clair); }
+
+/* =================== À BORD =================== */
+
+.bord-flux { display: flex; flex-direction: column; gap: 2rem; }
+
+.snap-large { transform: rotate(-0.8deg); }
+
+.carte { list-style: none; }
+
+.carte li { padding: 1.15rem 0; border-top: 1px solid var(--trait); }
+.carte li:last-child { border-bottom: 1px solid var(--trait); }
+
+.carte h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.carte p { margin-top: 0.3rem; font-size: 0.92rem; color: var(--encre-douce); }
+
+.bord-snaps { display: flex; gap: 1rem; align-items: flex-start; }
+.bord-snaps .snap:first-child { flex: 1; }
+.bord-snaps .snap:last-child { flex: 1.5; margin-top: 1.4rem; }
+
+.bord-mention {
+  margin-top: 1.8rem;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  font-size: 0.74rem;
+  color: var(--encre-douce);
+}
+
+/* =================== CARNET =================== */
+
+.carnet-grille { columns: 2; column-gap: 1rem; }
+
+.carnet-grille .snap { margin-bottom: 1rem; width: 100%; break-inside: avoid; }
+
+.carnet-grille .snap:nth-child(odd) { transform: rotate(-1.1deg); }
+.carnet-grille .snap:nth-child(even) { transform: rotate(1.2deg); }
+
+/* =================== INFOS =================== */
+
+.infos-grille { display: flex; flex-direction: column; gap: 1.8rem; }
+
+.info-bloc {
+  border-top: 3px solid var(--encre);
+  padding-top: 1rem;
+}
+
+.info-label { color: var(--rouge); margin-bottom: 0.6rem; }
+
+.info-bloc > p { font-size: 1.02rem; }
+
+.info-plus { margin-top: 0.55rem; font-size: 0.84rem !important; color: var(--encre-douce); max-width: 30rem; }
+
+.horaires div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--trait);
+  font-size: 0.95rem;
+}
+
+.horaires dt { font-weight: 600; }
+.horaires dd { font-family: var(--f-mono); font-size: 0.8rem; }
+
+.lien-fleche {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--rouge);
+  padding-bottom: 2px;
+}
+
+.lien-fleche::after { content: " ↗"; color: var(--rouge); }
+
+/* =================== NAV POUCE =================== */
+
+.pouce {
+  position: fixed;
+  left: 50%;
+  bottom: max(0.9rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.15rem;
+  background: var(--encre);
+  border-radius: 999px;
+  padding: 0.3rem;
+  box-shadow: 0 8px 22px rgba(29, 58, 51, 0.35);
+  z-index: 50;
+  transition: transform 0.35s cubic-bezier(0.2, 0.6, 0.2, 1), opacity 0.35s ease;
+}
+
+.pouce.cachee { transform: translateX(-50%) translateY(140%); opacity: 0; }
+
+.pouce a {
+  text-decoration: none;
+  color: var(--papier-clair);
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+}
+
+.pouce a .mono { font-size: 0.66rem; letter-spacing: 0.08em; }
+
+.pouce-tel { background: var(--rouge); }
+
+/* =================== FOOTER =================== */
+
+.pied {
+  background: var(--encre);
+  color: var(--papier-clair);
+  padding: 0 1.35rem 2.2rem;
+  text-align: left;
+}
+
+.pied-eau { display: block; width: 100%; height: 20px; margin-bottom: 2.2rem; }
+.pied-eau path { stroke: var(--papier); stroke-width: 2; }
+
+.pied { margin-top: 0; }
+
+.pied-nom { font-weight: 750; font-size: 1.4rem; letter-spacing: -0.01em; }
+
+.pied-adresse {
+  margin-top: 0.6rem;
+  color: rgba(246, 238, 220, 0.7);
+  text-transform: none;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+}
+
+.pied-adresse a { color: inherit; }
+
+.pied-nav { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.6rem; }
+
+.pied-nav a { color: rgba(246, 238, 220, 0.7); text-decoration: none; border-bottom: 1px solid rgba(246, 238, 220, 0.25); padding-bottom: 1px; }
+
+.pied-credit { margin-top: 1.8rem; color: rgba(246, 238, 220, 0.55); text-transform: none; letter-spacing: 0.04em; }
+
+.pied-credit a { color: rgba(246, 238, 220, 0.85); }
+
+/* =================== PAGES LÉGALES =================== */
+
+.legal-main { max-width: 44rem; padding: 3rem 1.35rem 4rem; }
+
+.legal-main h1 { font-size: 2rem; font-weight: 760; letter-spacing: -0.02em; margin-bottom: 1.6rem; }
+
+.legal-main h2 { font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 0.5rem; }
+
+.legal-main p, .legal-main li { font-size: 0.95rem; color: var(--encre-douce); margin-bottom: 0.6rem; }
+
+.legal-main ul { padding-left: 1.2rem; }
+
+.legal-main .a-completer {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  background: rgba(216, 67, 44, 0.1);
+  color: var(--rouge);
+  padding: 0.1rem 0.35rem;
+}
+
+.legal-retour { display: inline-block; margin-bottom: 2rem; }
+
+/* ===================================================
+   DESKTOP — extension panoramique et calme
+   =================================================== */
+
+@media (min-width: 760px) {
+
+  section { padding: 6.5rem 6vw 5.5rem; }
+  section + section::before { left: 6vw; right: 6vw; }
+
+  .topbar { padding: 1.2rem 6vw; }
+
+  .topbar-nav { display: flex; gap: 2rem; }
+  .topbar-nav a {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .topbar-nav a:hover { color: var(--rouge); }
+
+  .pouce { display: none; }
+
+  /* HERO : composition panoramique */
+  .hero { padding-top: 4.5rem; padding-bottom: 7rem; }
+
+  .hero-titre { font-size: clamp(3.6rem, 6.6vw, 5.6rem); max-width: 12ch; }
+
+  .hero-note { position: absolute; right: 6vw; top: 6.2rem; max-width: 17rem; text-align: left; }
+
+  .hero-dessin { margin: 1.4rem 0 0; }
+  .hero-dessin svg { max-height: 46vh; display: block; margin-inline: auto; }
+  .hero-legende { text-align: left; padding-left: 0.4rem; }
+
+  .hero-rdv {
+    position: absolute;
+    right: 6vw;
+    bottom: -3.2rem;
+    width: min(24rem, 38vw);
+    margin-top: 0;
+    z-index: 2;
+  }
+
+  /* LE LIEU */
+  .lieu { padding-top: 8.5rem; }
+
+  .lieu-flux { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items: start; }
+
+  .pont { margin-bottom: 0; }
+  .pont:nth-child(2) { margin-top: 5rem; }
+
+  .lieu-histoire { margin-top: 4rem; }
+
+  /* AGENDA */
+  .agenda .sec-tete { display: flex; align-items: baseline; gap: 3rem; }
+
+  .rituel { grid-template-columns: 10rem 1fr 1.2fr; align-items: baseline; padding: 1.7rem 0; }
+  .rituel h3 { font-size: 1.5rem; }
+  .rituel div { display: contents; }
+  .rituel p:not(.rituel-jour) { margin-top: 0; }
+
+  /* À BORD */
+  .bord-flux {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas: "planche carte" "snaps carte";
+    gap: 2rem 4vw;
+  }
+  .snap-large { grid-area: planche; }
+  .carte { grid-area: carte; }
+  .bord-snaps { grid-area: snaps; max-width: 30rem; }
+
+  /* CARNET */
+  .carnet-grille { columns: 4; column-gap: 1.2rem; }
+
+  /* INFOS */
+  .infos-grille { flex-direction: row; gap: 4vw; }
+  .info-bloc { flex: 1; }
+
+  .pied { padding: 0 6vw 2.5rem; }
+
+  .legal-main { padding: 4rem 6vw 5rem; }
+}
+
+@media (min-width: 1200px) {
+  .hero-titre { letter-spacing: -0.03em; }
+  .carnet-grille { columns: 4; }
+}

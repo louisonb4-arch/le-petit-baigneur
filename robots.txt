@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /mentions-legales.html
+Disallow: /confidentialite.html
+Disallow: /cookies.html
+
+Sitemap: https://lepetitbaigneur-site.vercel.app/sitemap.xml

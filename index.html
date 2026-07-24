@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Petit Baigneur — Guinguette flottante, Bassin Saint-Félix, Nantes</title>
+<meta name="description" content="Le Petit Baigneur, guinguette flottante amarrée au Bassin Saint-Félix, quai Malakoff à Nantes. Quiz du mercredi, bières locales, vins de Loire et planches à partager, les pieds au-dessus de l'eau.">
+<link rel="canonical" href="https://lepetitbaigneur-site.vercel.app/">
+<meta property="og:title" content="Le Petit Baigneur — Guinguette flottante à Nantes">
+<meta property="og:description" content="Une barge amarrée au Bassin Saint-Félix : quiz du mercredi, bières du Bouffay, vins de Loire et fins de journée au-dessus de l'eau.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lepetitbaigneur-site.vercel.app/">
+<meta property="og:image" content="https://lepetitbaigneur-site.vercel.app/img/barge-face.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23D8432C'/%3E%3Cpath d='M18 62c8-6 14 6 22 0s14 6 22 0 14 6 20 1' stroke='%23F6EEDC' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Sometype+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Le Petit Baigneur",
+  "description": "Guinguette flottante amarrée au Bassin Saint-Félix, quai Malakoff, à Nantes.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bassin Saint-Félix, Quai Malakoff",
+    "addressLocality": "Nantes",
+    "postalCode": "44000",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 47.2126, "longitude": -1.5423 },
+  "telephone": "+33251840679",
+  "url": "https://lepetitbaigneur-site.vercel.app/",
+  "sameAs": ["https://www.instagram.com/lepetitbaigneurnantes/"],
+  "servesCuisine": "Planches et tapas",
+  "priceRange": "€€"
+}
+</script>
+</head>
+<body>
+
+<!-- ============ ENTRÉE : la ligne d'eau ============ -->
+<div class="entree" id="entree" aria-hidden="true">
+  <div class="entree-inner">
+    <svg class="entree-svg" viewBox="0 0 400 240" fill="none" aria-hidden="true">
+      <path class="e-eau" pathLength="1" d="M8 180 C 60 176, 90 184, 140 180 S 240 176, 290 180 S 372 184, 392 180"/>
+      <g class="e-barge">
+        <path class="e-trait t1" pathLength="1" d="M120 178 L126 152 H274 L280 178 Z"/>
+        <path class="e-trait t2" pathLength="1" d="M136 152 V128 H264 V152"/>
+        <path class="e-trait t3" pathLength="1" d="M136 140 H264"/>
+        <path class="e-trait t4" pathLength="1" d="M148 128 V112 M200 128 V110 M252 128 V112"/>
+        <path class="e-trait t5" pathLength="1" d="M148 112 C160 100 240 98 252 112"/>
+        <path class="e-trait t6" pathLength="1" d="M176 110 V88 M164 96 C170 84 182 84 188 96 M176 88 h0"/>
+        <path class="e-trait t7" pathLength="1" d="M120 172 C 100 176, 88 190, 82 202"/>
+      </g>
+    </svg>
+    <p class="entree-nom"><span>Le</span> <span>Petit</span> <span>Baigneur</span></p>
+    <p class="entree-lieu">bassin saint-félix · nantes</p>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="topbar" id="haut">
+  <a class="topbar-nom" href="#haut">Le Petit Baigneur</a>
+  <nav class="topbar-nav" aria-label="Navigation principale">
+    <a href="#lieu">Le lieu</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#bord">À bord</a>
+    <a href="#infos">Venir</a>
+  </nav>
+  <a class="topbar-tel" href="tel:+33251840679">02 51 84 06 79</a>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <p class="mono hero-coord">47.212° N — 1.542° O · quai Malakoff</p>
+  <h1 class="hero-titre">
+    <span class="ht-ligne">La guinguette</span>
+    <span class="ht-ligne">qui flotte<em class="ht-rouge">*</em></span>
+  </h1>
+  <p class="hero-note mono"><em class="ht-rouge">*</em>vraiment. Une barge amarrée au Bassin Saint-Félix, entre la gare sud et le Lieu Unique.</p>
+
+  <figure class="hero-dessin" aria-label="Dessin au trait de la barge du Petit Baigneur">
+    <svg viewBox="0 0 900 380" fill="none" aria-hidden="true">
+      <!-- ligne d'eau -->
+      <path class="d-eau" d="M10 302 C 80 297, 130 307, 200 302 S 340 297, 420 302 S 560 307, 640 302 S 800 297, 890 302"/>
+      <!-- reflet -->
+      <path class="d-reflet" d="M230 322 H 660 M260 340 H 610 M300 356 H 560"/>
+      <!-- coque -->
+      <path class="d-trait" d="M212 302 L 224 250 H 676 L 688 302"/>
+      <path class="d-trait" d="M224 276 H 676 M240 250 V 302 M660 250 V 302"/>
+      <!-- salle vitrée -->
+      <path class="d-trait" d="M244 250 V 198 H 656 V 250"/>
+      <path class="d-trait" d="M244 222 H 656"/>
+      <path class="d-fin" d="M292 198 V 250 M340 198 V 250 M388 198 V 250 M436 198 V 250 M484 198 V 250 M532 198 V 250 M580 198 V 250 M628 198 V 250"/>
+      <!-- rambarde rooftop -->
+      <path class="d-fin" d="M252 198 V 168 M312 198 V 168 M372 198 V 168 M432 198 V 168 M492 198 V 168 M552 198 V 168 M612 198 V 168 M648 198 V 168"/>
+      <path class="d-trait" d="M244 168 H 656"/>
+      <!-- plantes rooftop -->
+      <path class="d-vert" d="M282 168 c-4 -12 8 -18 10 -6 c6 -12 14 -4 8 6 M470 168 c-4 -10 6 -16 9 -5 c5 -10 13 -4 7 5 M598 168 c-5 -12 7 -18 9 -6 c6 -10 14 -4 8 6"/>
+      <!-- parasol raphia -->
+      <path class="d-trait" d="M360 166 V 96"/>
+      <path class="d-trait" d="M308 100 C 322 74 398 74 412 100"/>
+      <path class="d-frange" d="M310 100 l-2 10 M327 92 l-2 10 M344 88 l-1 10 M360 86 l0 10 M376 88 l1 10 M393 92 l2 10 M410 100 l2 10"/>
+      <!-- parasol rouge -->
+      <path class="d-rouge" d="M540 164 V 106 M498 110 C 510 88 570 88 582 110 M498 110 l6 8 M540 96 l0 10 M582 110 l-6 8"/>
+      <!-- mât + fanions -->
+      <path class="d-trait" d="M652 168 V 60"/>
+      <path class="d-fanions" d="M652 62 C 560 84, 460 92, 364 88"/>
+      <path class="d-fanion" d="M622 70 l4 12 8 -9 z M576 79 l3 12 9 -8 z M528 85 l3 12 9 -8 z M480 89 l2 12 9 -8 z M432 90 l2 12 9 -8 z"/>
+      <!-- amarre vers bollard -->
+      <path class="d-corde" d="M212 288 C 160 296, 120 314, 96 336"/>
+      <path class="d-trait" d="M88 336 c-6 8 2 16 10 12 c8 -4 6 -14 -2 -14 M84 350 h22"/>
+      <!-- canard -->
+      <path class="d-canard" d="M772 300 c0 -8 10 -12 15 -6 c1 -7 11 -8 13 -1 c3 -8 -2 -13 -8 -13 c-1 -5 6 -8 10 -5 M770 300 c8 5 22 5 30 -1"/>
+    </svg>
+    <figcaption class="mono hero-legende">Élévation ouest — coque, salle vitrée, rooftop. Échelle sentimentale.</figcaption>
+  </figure>
+
+  <div class="hero-rdv">
+    <p class="mono rdv-label">Prochain rendez-vous fixe</p>
+    <p class="rdv-titre">Le quiz du mercredi</p>
+    <p class="rdv-detail">Chaque mercredi soir, en équipe — pensez à réserver votre table.</p>
+    <div class="rdv-actions">
+      <a class="btn btn-plein" href="https://www.google.com/maps/search/?api=1&query=Le+Petit+Baigneur%2C+Quai+Malakoff%2C+44000+Nantes" target="_blank" rel="noopener">S'amarrer ici</a>
+      <a class="btn btn-ligne" href="https://www.instagram.com/lepetitbaigneurnantes/" target="_blank" rel="noopener">La programmation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LE LIEU ============ -->
+<section class="lieu" id="lieu">
+  <header class="sec-tete">
+    <p class="mono sec-num">01 — Le lieu</p>
+    <h2>Deux ponts,<br>zéro terre ferme</h2>
+  </header>
+
+  <div class="lieu-flux">
+    <article class="pont">
+      <p class="mono pont-tag">Pont inférieur</p>
+      <h3>La salle vitrée, au ras de l'eau</h3>
+      <p>Une salle entièrement vitrée posée sur la flottaison : les fanions au plafond, les chaises dépareillées, et le bassin qui clapote à hauteur de coude. C'est ici qu'on se replie quand le ciel nantais fait des siennes.</p>
+      <div class="pont-photos">
+        <figure class="snap snap-a"><img src="img/salle-fanions.jpg" alt="La salle vitrée décorée de fanions et de lampions" width="427" height="321" loading="lazy"><figcaption class="mono">la salle, un soir de fête</figcaption></figure>
+        <figure class="snap snap-b"><img src="img/table-bord-eau.jpg" alt="Table au bord de l'eau avec chaises colorées" width="241" height="322" loading="lazy"><figcaption class="mono">première rangée</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="pont">
+      <p class="mono pont-tag">Pont supérieur</p>
+      <h3>Le rooftop, vue sur le bassin</h3>
+      <p>En haut de l'échelle : parasols de raphia, grandes tablées, plantes qui débordent des jardinières et le panorama sur le Bassin Saint-Félix. Le meilleur endroit de Nantes pour regarder la journée finir.</p>
+      <div class="pont-photos">
+        <figure class="snap snap-b"><img src="img/rooftop-tables.jpg" alt="Grandes tablées en bois sous les parasols de raphia du rooftop" width="429" height="321" loading="lazy"><figcaption class="mono">le rooftop, avant la foule</figcaption></figure>
+        <figure class="snap snap-a"><img src="img/parasols-soir.jpg" alt="Parasols rouges du rooftop en fin de journée" width="429" height="321" loading="lazy"><figcaption class="mono">19h47, plein été</figcaption></figure>
+      </div>
+    </article>
+  </div>
+
+  <aside class="lieu-histoire">
+    <p class="mono sec-num">Journal de bord — printemps 2018</p>
+    <p>Le Petit Baigneur est né au printemps 2018, quand Benoît a troqué la Bourse de Paris contre une barge nantaise. Le nom est un clin d'œil au film de Robert Dhéry avec Louis de Funès ; l'esprit, celui des guinguettes parisiennes qu'il aimait. Depuis, la barge est amarrée au même quai — et elle n'a aucune intention de lever l'ancre.</p>
+  </aside>
+</section>
+
+<!-- ============ AGENDA ============ -->
+<section class="agenda" id="agenda">
+  <header class="sec-tete">
+    <p class="mono sec-num">02 — Agenda</p>
+    <h2>Les rituels<br>du bord</h2>
+  </header>
+
+  <ol class="rituels">
+    <li class="rituel">
+      <p class="mono rituel-jour">Mercredi</p>
+      <div>
+        <h3>Quiz &amp; blind-test</h3>
+        <p>Le rendez-vous historique de la barge : culture générale, musique, mauvaise foi. On vient en équipe, on repart fâchés avec la question 7.</p>
+      </div>
+    </li>
+    <li class="rituel">
+      <p class="mono rituel-jour">Certains soirs</p>
+      <div>
+        <h3>Soirées à thème &amp; DJ sets</h3>
+        <p>Années 90, soirées déguisées, sélections musicales au coucher du soleil — la programmation change au fil de la saison.</p>
+      </div>
+    </li>
+    <li class="rituel">
+      <p class="mono rituel-jour">Grandes tablées</p>
+      <div>
+        <h3>Anniversaires &amp; équipages</h3>
+        <p>La barge accueille les groupes — anniversaire, pot d'équipe, retrouvailles. Un coup de fil et on vous garde un bout de pont.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p class="agenda-note mono">La programmation à jour se trouve sur <a href="https://www.instagram.com/lepetitbaigneurnantes/" target="_blank" rel="noopener">@lepetitbaigneurnantes</a> — c'est le journal officiel du bord.</p>
+</section>
+
+<!-- ============ À BORD ============ -->
+<section class="bord" id="bord">
+  <header class="sec-tete">
+    <p class="mono sec-num">03 — À bord</p>
+    <h2>De quoi tenir<br>jusqu'à la nuit</h2>
+  </header>
+
+  <div class="bord-flux">
+    <figure class="snap snap-large"><img src="img/planche-tapas.jpg" alt="Planche de pain de campagne et tartinables servie sur une table du rooftop" width="414" height="311" loading="lazy"><figcaption class="mono">planche à partager, pont supérieur</figcaption></figure>
+
+    <ul class="carte">
+      <li>
+        <h3>L'apéro maison</h3>
+        <p>« Le petit baigneur » : un banyuls ou un muscat servi dans son petit verre Duralex, comme chez les grands-parents.</p>
+      </li>
+      <li>
+        <h3>Bières d'ici</h3>
+        <p>Les brassins de la brasserie du Bouffay et d'autres brasseries locales, tirés face au bassin.</p>
+      </li>
+      <li>
+        <h3>Vins de Loire</h3>
+        <p>Muscadet et copains ligériens, au verre ou à la bouteille, à température de fin d'après-midi.</p>
+      </li>
+      <li>
+        <h3>Planches &amp; tartinables</h3>
+        <p>Pain de campagne, rillettes et tartinables à partager en équipage — le lest idéal avant le quiz.</p>
+      </li>
+    </ul>
+
+    <div class="bord-snaps">
+      <figure class="snap snap-a"><img src="img/biere-soleil.jpg" alt="Bière du Petit Baigneur en contre-jour au coucher du soleil" width="147" height="331" loading="lazy"><figcaption class="mono">contre-jour réglementaire</figcaption></figure>
+      <figure class="snap snap-b"><img src="img/biere-bassin.jpg" alt="Bière locale posée sur le rebord face au bassin Saint-Félix" width="236" height="317" loading="lazy"><figcaption class="mono">vue depuis le rebord</figcaption></figure>
+    </div>
+  </div>
+  <p class="bord-mention mono">Carte et prix évoluent avec la saison — le détail s'obtient au comptoir.</p>
+</section>
+
+<!-- ============ CARNET / GALERIE ============ -->
+<section class="carnet" id="carnet">
+  <header class="sec-tete">
+    <p class="mono sec-num">04 — Le carnet</p>
+    <h2>Photos de bord</h2>
+  </header>
+  <div class="carnet-grille">
+    <figure class="snap"><img src="img/barge-face.jpg" alt="La barge du Petit Baigneur vue du quai, avec son rooftop végétalisé" width="394" height="295" loading="lazy"><figcaption class="mono">la maison, vue du quai</figcaption></figure>
+    <figure class="snap"><img src="img/quai-barge.jpg" alt="Le bassin Saint-Félix et la barge pavoisée depuis les pavés du quai" width="362" height="347" loading="lazy"><figcaption class="mono">pavois de sortie d'été</figcaption></figure>
+    <figure class="snap"><img src="img/bar-equipe.jpg" alt="Au comptoir du bar, boîtes de quiz posées devant l'équipe" width="240" height="300" loading="lazy"><figcaption class="mono">le comptoir, quiz en stock</figcaption></figure>
+    <figure class="snap"><img src="img/parasol-chaises.jpg" alt="Parasol de raphia et chaises multicolores sur le pont" width="241" height="320" loading="lazy"><figcaption class="mono">l'ombre du raphia</figcaption></figure>
+    <figure class="snap"><img src="img/bord-eau-plantes.jpg" alt="Table rouge au bord de l'eau entourée de plantes" width="239" height="319" loading="lazy"><figcaption class="mono">cabine côté jardin</figcaption></figure>
+    <figure class="snap"><img src="img/gobelet-paille.jpg" alt="Gobelet du Petit Baigneur avec une paille, vue sur le bassin" width="245" height="325" loading="lazy"><figcaption class="mono">le gobelet qui voyage</figcaption></figure>
+    <figure class="snap"><img src="img/salle-interieur.jpg" alt="Intérieur de la salle avec tables hautes et parquet" width="239" height="322" loading="lazy"><figcaption class="mono">parquet de pont</figcaption></figure>
+    <figure class="snap"><img src="img/terrasse-parasols.jpg" alt="Parasols rouges et jardinières sur la terrasse" width="246" height="319" loading="lazy"><figcaption class="mono">rouge parasol</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ INFOS / VENIR ============ -->
+<section class="infos" id="infos">
+  <header class="sec-tete">
+    <p class="mono sec-num">05 — Accoster</p>
+    <h2>Venir à bord</h2>
+  </header>
+
+  <div class="infos-grille">
+    <div class="info-bloc">
+      <p class="mono info-label">Amarrage</p>
+      <p>Bassin Saint-Félix<br>Quai Malakoff<br>44000 Nantes</p>
+      <p class="info-plus">À quelques minutes à pied de la gare de Nantes (sortie sud) et du Lieu Unique.</p>
+      <a class="lien-fleche" href="https://www.google.com/maps/search/?api=1&query=Le+Petit+Baigneur%2C+Quai+Malakoff%2C+44000+Nantes" target="_blank" rel="noopener">Itinéraire</a>
+    </div>
+    <div class="info-bloc">
+      <p class="mono info-label">Horaires d'escale</p>
+      <dl class="horaires">
+        <div><dt>Lundi</dt><dd>fermé</dd></div>
+        <div><dt>Mardi</dt><dd>16h30 — 22h00</dd></div>
+        <div><dt>Mer — Sam</dt><dd>16h30 — minuit</dd></div>
+        <div><dt>Dimanche</dt><dd>fermé</dd></div>
+      </dl>
+      <p class="info-plus">Guinguette de saison : les horaires bougent avec la météo et le calendrier — vérifiez sur Instagram avant de larguer les amarres.</p>
+    </div>
+    <div class="info-bloc">
+      <p class="mono info-label">Radio de bord</p>
+      <p><a class="lien-fleche" href="tel:+33251840679">02 51 84 06 79</a></p>
+      <p class="info-plus">Pour les tables de quiz, les grandes tablées et les questions existentielles.</p>
+      <a class="lien-fleche" href="https://www.instagram.com/lepetitbaigneurnantes/" target="_blank" rel="noopener">@lepetitbaigneurnantes</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ NAV POUCE (mobile) ============ -->
+<nav class="pouce" id="pouce" aria-label="Accès rapide">
+  <a href="#agenda"><span class="mono">Agenda</span></a>
+  <a href="#bord"><span class="mono">À bord</span></a>
+  <a href="#infos"><span class="mono">Venir</span></a>
+  <a href="tel:+33251840679" class="pouce-tel"><span class="mono">Appeler</span></a>
+</nav>
+
+<!-- ============ FOOTER ============ -->
+<footer class="pied">
+  <svg class="pied-eau" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 10 C 40 6, 70 14, 110 10 S 190 6, 230 10 S 320 14, 400 10" fill="none"/>
+  </svg>
+  <p class="pied-nom">Le Petit Baigneur</p>
+  <p class="mono pied-adresse">Bassin Saint-Félix · Quai Malakoff · 44000 Nantes · <a href="tel:+33251840679">02 51 84 06 79</a></p>
+  <nav class="pied-nav mono" aria-label="Pages légales">
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="cookies.html">Cookies</a>
+  </nav>
+  <p class="pied-credit mono">Création du site — <a href="https://vokumagency.com" target="_blank" rel="noopener">Vokum</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
